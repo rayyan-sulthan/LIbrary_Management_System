@@ -1,0 +1,29 @@
+package com.rayyan.library.dto;
+
+import jakarta.persistence.Column;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class BookRequestDTO {
+
+    @NotBlank(message = "Title cannot be empty")
+    private String title;
+
+    @NotBlank(message = "Author cannot be empty")
+    private String author;
+
+    @NotNull(message = "price is required")
+    @Positive(message = "price should be greater than 0")
+    private Double price;
+
+
+}
